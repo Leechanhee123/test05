@@ -2123,6 +2123,43 @@
             text-align: center;
         }
     }
+
+    .mobile-menu-popup {
+        display: none;
+        position: fixed;
+        top: 80px;  /* 헤더 높이에 맞춰 조정 */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+        padding: 20px;
+    }
+
+    .mobile-menu-popup.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .mobile-menu-popup span {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .mobile-menu-popup a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    /* 데스크톱에서는 숨기기 */
+    @media screen and (min-width: 769px) {
+        .mobile-menu-popup {
+            display: none !important;
+        }
+    }
 </style>
 
 <body>
@@ -2149,6 +2186,15 @@
                 <span></span>
                 <span></span>
                 <span></span>
+            </div>
+            <!-- 모바일 메뉴 팝업 -->
+            <div class="mobile-menu-popup">
+                <span><a href="#about-section">Dental Introduction</a></span>
+                <span><a href="#Introduction-section">Director Introduction</a></span>
+                <span><a href="#price-section">Price</a></span>
+                <span><a href="#equipment-section">Treatment</a></span>
+                <span><a href="#process-section">Schedule</a></span>
+                <span><a href="#location-section">Location</a></span>
             </div>
         </nav>
     </header>
@@ -2198,7 +2244,7 @@
                 </p>
             </div>
             <div class="info-image">
-                <img src="./images/KakaoTalk_20241124_165550405_19.jpg" alt="Specialized Care Image">
+                <img src="./images/KakaoTalk_20241124_165550305_08.jpg" alt="Specialized Care Image">
             </div>
         </div>
     </section>
@@ -2281,7 +2327,7 @@
 
         </div>
         <div class="content-cards">
-            <!-- 카드: 최고의 품질 -->
+            <!-- 카드: 최고의 ���질 -->
             <div class="card">
                 <div>
                     <h2>Focus on Long-Term Dental Health and Minimally Invasive Procedures</h2>
@@ -2456,10 +2502,10 @@
 
                 <h2>🎓 Academic Background</h2>
                 <p>DDS (Doctor of Dental Surgery) – Catholic University of Korea School of Medicine</p>
-                <p>Master’s Degree in Restorative and Prosthetic Dentistry – Catholic University Graduate School of
+                <p>Master's Degree in Restorative and Prosthetic Dentistry – Catholic University Graduate School of
                     Dentistry</p>
                 <p>Certified Specialist in Conservative Dentistry – Completed Internship and Residency at Seoul St.
-                    Mary’s Hospital</p>
+                    Mary's Hospital</p>
                 <p>Advanced Implant Training – Completed Regular Course at Osstem Implant</p>
 
                 <h2>👨‍⚕️ Career Highlights</h2>
@@ -2975,8 +3021,54 @@
     </section>
     <!-- 리뷰 끝-->
     <!-- 푸터 컴포넌트 -->
-    <div id="footer-component"></div>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section footer-info">
+                <h3>Bansuk Dental Clinic</h3>
+                <p class="footer-address">19, Mugyo-ro, Jung-gu, Seoul, Republic of Korea</p>
+                <div class="footer-contact">
+                    <p><strong>Phone:</strong> +82-2-776-2080</p>
+                    <p><strong>Email:</strong> bansukdentalclinic@gmail.com</p>
+                </div>
+            </div>
 
+            <div class="footer-section footer-hours">
+                <h3>Opening Hours</h3>
+                <ul class="hours-list">
+                    <li><span>Monday - Wednesday:</span> 10:00 AM - 8:00 PM</li>
+                    <li><span>Thursday - Friday:</span> 10:00 AM - 6:30 PM</li>
+                    <li><span>Saturday:</span> 10:00 AM - 2:00 PM</li>
+                    <li><span>Lunch Break:</span> 1:30 PM - 3:00 PM</li>
+                    <li><span>Closed:</span> Sundays and Public Holidays</li>
+                </ul>
+            </div>
+
+            <div class="footer-section footer-links">
+                <h3>Quick Links</h3>
+                <ul class="quick-links-list">
+                    <li><a href="#about-section">About Us</a></li>
+                    <li><a href="#process-section">Services</a></li>
+                    <li><a href="#location-section">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section footer-social">
+                <h3>Stay Connected</h3>
+                <div class="social-links">
+                    <a href="https://map.naver.com/p/search/%EB%B0%98%EC%84%9D%EC%B9%98%EA%B3%BC/place/1351072876?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp"
+                        target="_blank" class="social-link naver">Naver</a>
+                    <a href="https://www.instagram.com/bansuk_dental/" target="_blank"
+                        class="social-link instagram">Instagram</a>
+                    <a href="https://www.google.co.kr/maps/place/%EB%B0%98%EC%84%9D%EC%B9%98%EA%B3%BC%EB%B3%B4%EC%A1%B4%EA%B3%BC%EC%B9%98%EA%B3%BC%EC%9D%98%EC%9B%90/data=!4m10!1m2!2m1!1z67CY7ISd7LmY6rO8!3m6!1s0x357ca35c0c6ce72b:0x53371b1b0e85fa2a!8m2!3d37.5676504!4d126.9790597!15sCgzrsJjshJ3suZjqs7ySAQ1kZW50YWxfY2xpbmlj4AEA!16s%2Fg%2F11s9d7f8gy?hl=ko&entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" class="social-link google">Google</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bansuk Dental Clinic. All rights reserved.</p>
+        </div>
+    </footer>
     <script>
         $(document).ready(function () {
             $("#footer-component").load("./components/equipment.html");
@@ -3001,23 +3093,28 @@
             // 헤더 관련 함수
             function initializeHeader() {
                 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-                const navLinks = document.querySelector('.nav-links');
-                const header = document.querySelector('.header');
+                const mobileMenuPopup = document.querySelector('.mobile-menu-popup');
 
-                if (mobileMenuBtn && navLinks && header) {
-                    // 모바일 메뉴 토글
-                    mobileMenuBtn.addEventListener('click', function () {
-                        navLinks.classList.toggle('active');
+                if (mobileMenuBtn && mobileMenuPopup) {
+                    mobileMenuBtn.addEventListener('click', function() {
                         this.classList.toggle('active');
+                        mobileMenuPopup.classList.toggle('active');
+                        
+                        // 메뉴 열린 상태에서 스크롤 방지
+                        if (mobileMenuPopup.classList.contains('active')) {
+                            document.body.style.overflow = 'hidden';
+                        } else {
+                            document.body.style.overflow = 'auto';
+                        }
                     });
 
-                    // 스크롤 이벤트
-                    window.addEventListener('scroll', function () {
-                        if (window.scrollY > 50) {
-                            header.classList.add('scrolled');
-                        } else {
-                            header.classList.remove('scrolled');
-                        }
+                    // 메뉴 항목 클릭시 팝업 닫기
+                    mobileMenuPopup.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', function() {
+                            mobileMenuBtn.classList.remove('active');
+                            mobileMenuPopup.classList.remove('active');
+                            document.body.style.overflow = 'auto';
+                        });
                     });
                 }
             }
